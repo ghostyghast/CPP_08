@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 16:40:27 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/16 17:45:51 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/16 19:24:38 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <exception>
 
-class valueNotFoundException : public std::exception
+class ValueNotFoundException : public std::exception
 {
 	const char *what() const throw()
 	{

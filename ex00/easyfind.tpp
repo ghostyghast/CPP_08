@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 16:40:35 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/16 17:45:48 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/16 19:24:45 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ template <typename T> int	&easyfind(T container, int find)
 
 	it = std::find(container.begin(), container.end(), find);
 	if (it == container.end())
-		throw valueNotFoundException();
+		throw ValueNotFoundException();
 	return (*it);
 }
 

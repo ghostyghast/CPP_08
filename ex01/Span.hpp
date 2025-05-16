@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 17:54:53 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/16 19:27:41 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/16 20:45:08 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,16 @@ class Span
 		Span &operator=(const Span &copy);
 
 		void	addNumber(int i);
-		template <typename T> void addRange(typename T::iterator _first, typename T::iterator _last);
+		template <typename T> void addRange(typename T::iterator first, typename T::iterator last)
+		{
+			while (first != last)
+			{
+				if (this->_numbers.size() == this->_n)
+					throw MaximumIntReachedException();
+				this->_numbers.push_back(*first);
+				first++;
+			}
+		}
 
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();

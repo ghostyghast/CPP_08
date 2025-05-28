@@ -11,7 +11,7 @@ NAME = span
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -g3 -std=c++98 -fsanitize=address
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp
 	@mkdir -p $(OBJS_PATH)

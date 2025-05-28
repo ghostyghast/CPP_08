@@ -11,7 +11,7 @@ NAME = easy_find
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -g3
+FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp
 	@mkdir -p $(OBJS_PATH)

@@ -6,7 +6,7 @@
 /*   By: pringles <pringles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 16:41:13 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/28 11:52:37 by pringles         ###   ########.fr       */
+/*   Updated: 2025/05/28 12:24:55 by pringles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	main(void)
 {
 	int			find[] = {-1, 100, 3};
 	int			values[] = {-1, 1, 2, 3};
-	vector<int>	vect = {-1,1,2,3};
-	list<int>	lst = {0,1,2,3};
-	add_values(values, 4, vect);
+	vector<int>	vect;
+	list<int>	lst;
 	add_values(values, 4, lst);
+	add_values(values, 4, vect);
 
 	cout << "-------------------\n";
 	for (int i = 0; i < 3; i++)

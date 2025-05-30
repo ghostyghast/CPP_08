@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pringles <pringles@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:12:22 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/29 09:18:38 by pringles         ###   ########.fr       */
+/*   Updated: 2025/05/30 15:09:49 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 using std::cout;
 
 template <typename T> void add_values(int const* array, size_t size, T &container)
@@ -52,15 +53,17 @@ int main()
 	{
 		std::cout << e.what() << '\n';	
 	}
-
 	cout << "--------------------\n"; 
-	Span	span(10);
+	Span	span(10000);
+	srand((unsigned int)time(NULL));
 	
-	std::vector<int>		list;
-	int					values[4] = {-1, 10, 11212, 4};
-	add_values(values, 4, list);
-	cout << "Span(10) values: " << list << '\n';
-	span.addRange<std::vector<int> >(list.begin(), list.end());
+	std::vector<int>		numbers;
+	
+	for (int i = 0; i < 10000; i++)
+		numbers.push_back(rand());
+	
+	cout << "Span(10) values: " << numbers << '\n';
+	span.addRange<std::vector<int> >(numbers.begin(), numbers.end());
 	std::cout << "shortest span: " << span.shortestSpan() << std::endl; 
 	std::cout << "longest span: " << span.longestSpan() << std::endl;
 	return (0);

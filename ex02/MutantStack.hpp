@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:12:11 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/20 20:07:41 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/30 19:17:24 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class MutantStack : public std::stack<T>
 		~MutantStack();
 		MutantStack(const MutantStack &copy);
 		MutantStack &operator=(const MutantStack &copy);
+
+		template <typename R > void push_range(typename R::const_iterator start, typename R::const_iterator end);
 
 		iterator	begin();
 		iterator	end();

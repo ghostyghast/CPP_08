@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:54:36 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/20 20:16:57 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:51:14 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ template <typename T>
 typename MutantStack<T>::iterator	MutantStack<T>::end()
 {
 	return (this->c.end());
+}
+
+template <typename T>
+template <typename R>
+void	MutantStack<T>::push_range(typename R::const_iterator start, typename R::const_iterator end)
+{
+	for (typename R::const_iterator it = start; it < end; it++)
+		this->push(*it);
 }
 
 #endif
